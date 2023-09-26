@@ -14,12 +14,13 @@ nav{
     display:grid;
     grid-template-columns: 4fr 2fr 2fr 2fr 2fr 2fr 1fr;
     grid-template-rows: 1fr;
+    justify-items: center;
 }
-nav div{
-    text-align: center;
+nav div a:hover{
+    color: gold;
+    border-bottom: 2px solid gold;
 }
 .logo{
-    text-align: start;
     grid-column: 1/2;
 }
 .friends{
