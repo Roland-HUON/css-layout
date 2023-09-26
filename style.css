@@ -112,8 +112,8 @@ main {
 .me .pp{
     position: absolute;
     z-index: 2;
-    left: 170px;
-    top: 170px;
+    left: 310px;
+    top: 160px;
 }
 .btn{
     display: flex;
