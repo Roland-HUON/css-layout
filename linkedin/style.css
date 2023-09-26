@@ -81,7 +81,7 @@ main {
     padding-top: 25px;
     grid-column: 1/2;
     display: grid;
-    grid-template-rows: 1fr 1fr 2fr 2fr 2fr 2fr;
+    grid-template-rows: 2fr 2fr 2fr 2fr 2fr 2fr;
     justify-items: center;
     left: 90px;
     background-color: grey;
@@ -118,11 +118,38 @@ main {
 .btn{
     display: flex;
 }
+.btn button{
+    border-radius: 15px;
+}
+.blue{
+    background-color: blue;
+    color: white;
+}
+.white{
+    margin-left: 10px;
+    border: 2px solid blue;
+    color: blue;
+}
+.noBudget{
+    margin-left: 10px;
+    border: 2px solid grey;
+    color: grey;
+}
+.suggest{
+    grid-row: 3/4;
+    width: 700px;
+    border-radius: 10px;
+    background-color: white;
+}
+.suggest h2{
+    margin-top: 15px;
+    text-align: center;
+}
 aside{
     padding-top: 25px;
     grid-column: 2/3;
     display: grid;
-    grid-template-rows: 1fr 2fr 6fr;
+    grid-template-rows: 150px 290px 1fr;
     justify-items: flex-start;
     background-color: grey;
 }
@@ -144,6 +171,27 @@ aside{
 .langue p{
     margin-left: 15px;
 }
+.langue hr{
+    width: 200px;
+    margin-left: 25px;
+    margin-top: 5px;
+}
 .langue a{
     margin-left: 15px;
+}
+#france{
+    margin-top: 5px;
+    margin-left: 25px;
+    width: 220px;
+}
+.profilOther{
+    width: 270px;
+    height: fit-content;
+    border-radius: 10px;
+    background-color: white;
+}
+@media screen and (max-width: 900px) {
+    section{
+        grid-template-columns: 1fr;
+    }
 }
