@@ -81,7 +81,7 @@ main {
     padding-top: 25px;
     grid-column: 1/2;
     display: grid;
-    grid-template-rows: 2fr 2fr 2fr 2fr 2fr 2fr;
+    grid-template-rows: 2fr 2fr 2fr;
     justify-items: center;
     left: 90px;
     background-color: grey;
@@ -192,6 +192,20 @@ aside{
 }
 @media screen and (max-width: 900px) {
     section{
-        grid-template-columns: 1fr;
+        display: block;
+    }
+    aside{
+        justify-content: center;
+        justify-items: center;
+    }
+    .langue{
+        width: 700px;
+    }
+    .pubAside{
+        display: flex;
+        align-items: center;
+    }
+    .profilOther{
+        width:700px;
     }
 }
