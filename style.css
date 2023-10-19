@@ -1,221 +1,68 @@
-* {
+*{
     margin: 0;
     padding: 0;
-    font-size: 16px;
-    font-family: sans-serif;
-    text-decoration: none;
-    color: black;
+    font-size: 24px;
+    box-sizing: border-box;
 }
-body{
-    display: grid;
-    grid-template-rows: 50px auto;
+ul{
+    flex: 1 1 auto;
 }
-header{
-    grid-row: 1/2;
-    position:fixed;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(100px, 660px));
-    background-color: white;
-    align-items: flex-start;
-}
-header div p{
-    color: grey;
-    font-size: 10px;
-}
-.linkedin{
-    height: 29px;
-    grid-column: 1/2;
+nav{
+    height: 80px;
+    background-color: beige;
+    border-bottom: 2px solid black;
     display: flex;
-    justify-content: flex-end;
-    margin-right: 50px;
-    align-items: flex-end;
-}
-.linkedin img{
-    margin-right: 5px;
-    width: 25px;
-}
-.research input{
-    border-radius: 10px;
-    background-color: rgb(211, 202, 202);
-}
-.research input::placeholder{
-    text-align: start;
-    font-size: 10px;
-    opacity: 0.6;
-}
-.research img{
-    width: 15px;
-}
-.navBar{
-    grid-column: 2/3;
-    display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 20px;
+    padding-inline: 40px;
 }
-.navBar div:hover{
-    color: gold;
-    border-bottom: 2px solid gold;
+nav img{
+    width: 50px;
 }
-.other{
-    grid-column: 3/4;
+nav ul{
     display: flex;
-    justify-content: flex-start;
+    /* background: rgba(0, 0, 0, 0.4); */
+    /* width: 100%; */
+    list-style: none;
+    gap: 30px;
 }
-.other div:hover{
-    color: gold;
-    border-bottom: 2px solid gold;
+.button{
+    margin-left: auto;
 }
-.entreprise{
-    margin-left: 50px;
+nav button{
+    width: 150px;
+    border: 2px solid black;
+    border-radius: 10px;
+    height: 35px;
 }
-.pub{
-    margin-left: 50px;
+#menu{
+    display: none;
+    position: absolute;
 }
 section{
-    grid-row: 2/3;
-    position: static;
+    margin-top: 10px;
     display: grid;
     grid-template-columns: 2fr 1fr;
 }
-main {
-    padding-top: 25px;
+main{
     grid-column: 1/2;
     display: grid;
-    grid-template-rows: 2fr 2fr 2fr;
+    grid-template-columns: 1fr 1fr;
     justify-items: center;
-    left: 90px;
-    background-color: grey;
+    gap: 25px;
 }
-.fond{
-    position: relative;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-    width: 700px;
-}
-.me{
-    margin-top: -50px;
-    width: 700px;
-    height: 165px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    background-color: white;
-}
-.aboutMe{
-    margin-top: 50px;
-    margin-left: 25px;
-}
-.pp{
-    width: 120px;
-    border: 3px solid white;
-    border-radius: 50%;
-}
-.me .pp{
-    position: absolute;
-    z-index: 2;
-    left: 310px;
-    top: 160px;
-}
-.btn{
-    display: flex;
-}
-.btn button{
-    border-radius: 15px;
-}
-.blue{
-    background-color: blue;
-    color: white;
-}
-.white{
-    margin-left: 10px;
-    border: 2px solid blue;
-    color: blue;
-}
-.noBudget{
-    margin-left: 10px;
-    border: 2px solid grey;
-    color: grey;
-}
-.suggest{
-    grid-row: 3/4;
-    width: 700px;
+.tweet{
+    border: 2px solid black;
     border-radius: 10px;
-    background-color: white;
+    width: 475px;
+    height: 250px;
 }
-.suggest h2{
-    margin-top: 15px;
-    text-align: center;
+.tweet:nth-child(3n){
+    grid-column: 1/3;
 }
 aside{
-    padding-top: 25px;
-    grid-column: 2/3;
     display: grid;
-    grid-template-rows: 150px 290px 1fr;
-    justify-items: flex-start;
-    background-color: grey;
-}
-.pubAside img{
-    width: 270px;
-    border-radius: 10px;
-}
-.langue{
-    background-color: white;
-    width: 270px;
-    height: 130px;
-    border-radius: 10px;
-}
-.langue h3{
-    height: 10px;
-    margin-left: 15px;
-    margin-top: 10px;
-}
-.langue p{
-    margin-left: 15px;
-}
-.langue hr{
-    width: 200px;
-    margin-left: 25px;
-    margin-top: 5px;
-}
-.langue a{
-    margin-left: 15px;
-}
-#france{
-    margin-top: 5px;
-    margin-left: 25px;
-    width: 220px;
-}
-.profilOther{
-    width: 270px;
-    height: fit-content;
-    border-radius: 10px;
-    background-color: white;
-}
-@media screen and (max-width: 900px) {
-    .me{
-        margin-top: -10px;
-    }
-    .me .pp{
-        left: 40px;
-        top: 185px;
-    }
-    .pp{
-        width: 100px;
-    }
-    section{
-        display: block;
-    }
-    aside{
-        justify-content: center;
-        justify-items: center;
-    }
-    .langue{
-        width: 700px;
-    }
-    .pubAside{
-        display: flex;
-        align-items: center;
-    }
-    .profilOther{
-        width:700px;
-    }
+    grid-column: 2/3;
+    position: sticky;
+    justify-items: center;
 }
