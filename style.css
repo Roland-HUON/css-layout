@@ -4,6 +4,11 @@
     font-size: 24px;
     box-sizing: border-box;
 }
+a{
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
 ul{
     flex: 1 1 auto;
 }
@@ -40,11 +45,12 @@ nav button{
     position: absolute;
 }
 section{
-    margin-top: 10px;
+    gap: 10px;
     display: grid;
     grid-template-columns: 2fr 1fr;
 }
 main{
+    margin-top: 10px;
     grid-column: 1/2;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -52,17 +58,100 @@ main{
     gap: 25px;
 }
 .tweet{
+    display: flex;
+    flex-direction: column;
     border: 2px solid black;
     border-radius: 10px;
     width: 475px;
-    height: 250px;
+    height: 200px;
+}
+.tweet img{
+    width: 40px;
+    border-radius: 50%;
+}
+.header{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    grid-row: 1/2;
+    margin-left: 10px;
+}
+h3{
+    font-size: 18px;
+}
+.header div{
+    margin-left: 10px;
+}
+.header p{
+    font-size: 14px;
+    color: rgb(82, 79, 79);
+}
+.article{
+    margin-left: 20px;
+    width: 440px;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.contenu{
+    margin-top: 10px;
+    font-size: 16px;
+}
+.hashtags{
+    margin-bottom: 15px;
+    gap: 5px;
+    display: flex;
+}
+.hashtags p{
+    color: blue;
+    font-size: 12px;
 }
 .tweet:nth-child(3n){
     grid-column: 1/3;
 }
 aside{
+    position: sticky;
+    top: 90px;
+    align-self: flex-start;
     display: grid;
     grid-column: 2/3;
-    position: sticky;
     justify-items: center;
+}
+@media screen and (max-width:1200px){
+    nav{
+        height: fit-content;
+        flex-direction: column;
+    }
+    nav ul{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .button{
+        align-self: flex-start;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    section{
+        grid-template-columns: 1fr;
+    }
+    aside{    
+        position: static;   
+        margin-left: 20px; 
+        order: 1;
+        grid-column: 1/3;
+        justify-items: start;
+    }
+    main{
+        order: 2;
+        display: flex;
+        flex-direction: column;
+    }
+    .tweet{
+        width: 300px;
+    }
+    .contenu{
+        width: 250px;
+    }
 }
