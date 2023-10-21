@@ -12,6 +12,14 @@ a{
 ul{
     flex: 1 1 auto;
 }
+ul li a{
+    font-size: 24px;
+    cursor: pointer;
+}
+ul li a:hover{
+    color: gold;
+    border-bottom: 2px solid gold;
+}
 nav{
     height: 80px;
     background-color: beige;
@@ -23,11 +31,10 @@ nav{
 }
 nav img{
     width: 50px;
+    cursor: pointer;
 }
 nav ul{
     display: flex;
-    /* background: rgba(0, 0, 0, 0.4); */
-    /* width: 100%; */
     list-style: none;
     gap: 30px;
 }
@@ -39,10 +46,15 @@ nav button{
     border: 2px solid black;
     border-radius: 10px;
     height: 35px;
+    cursor: pointer;
+}
+nav button:hover{
+    background-color: gold;
 }
 #menu{
     display: none;
     position: absolute;
+    right: 0;
 }
 section{
     gap: 10px;
@@ -65,26 +77,34 @@ main{
     width: 475px;
     height: 200px;
 }
+.tweet:not(:nth-child(3n)){
+    container-type: inline-size;
+}
 .tweet img{
     width: 40px;
     border-radius: 50%;
+    cursor: pointer;
 }
 .header{
     margin-top: 10px;
     display: flex;
     align-items: center;
-    grid-row: 1/2;
     margin-left: 10px;
 }
 h3{
     font-size: 18px;
+    cursor: pointer;
 }
 .header div{
     margin-left: 10px;
+    display: flex;
+    gap: 1px;
+    flex-direction: column;
 }
 .header p{
-    font-size: 14px;
+    font-size: 12px;
     color: rgb(82, 79, 79);
+    cursor: pointer;
 }
 .article{
     margin-left: 20px;
@@ -106,6 +126,7 @@ h3{
 .hashtags p{
     color: blue;
     font-size: 12px;
+    cursor: pointer;
 }
 .tweet:nth-child(3n){
     grid-column: 1/3;
@@ -117,13 +138,95 @@ aside{
     display: grid;
     grid-column: 2/3;
     justify-items: center;
+    gap: 10px;
+}
+.adjust{
+    height: 260px;
+    width: 300px;
+    background-color: beige;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.adjust p{
+    cursor: pointer;
+}
+.pub img{
+    width: 300px;
+    border-radius: 10px;
+    height: auto;
+}
+.help{
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+.help p{
+    font-size: 14px;
+    color: rgb(123, 118, 118);
+    cursor: pointer;
+}
+.help p:hover{
+    color: black;
+}
+.floating-btn{
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 70px;
+    height: 70px;
+    border: 2px solid black;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: beige;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.floating-btn:hover{
+    background: gold;
+}
+.floating-btn .hidden-words{
+    position: absolute;
+    background: white;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 3px;
+    text-align: left;
+    width: 250px;
+    transform: translate(-160px, -25px);
+    display: none;
+}
+.floating-btn:hover .hidden-words{
+    display: block;
+}
+@container(max-width:300px){
+    .header{
+        flex-direction : column;
+        align-items : flex-start;
+    }
 }
 @media screen and (max-width:1200px){
     nav{
-        height: fit-content;
+        width: 100%;
+        height: 100%;
         flex-direction: column;
     }
+    #menu{
+        display: block;
+    }
+    .header div{
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+    }
     nav ul{
+        display: none;
         flex-wrap: wrap;
         justify-content: center;
     }
@@ -137,7 +240,8 @@ aside{
         grid-template-columns: 1fr;
     }
     aside{    
-        position: static;   
+        position: static;
+        margin-top: 10px;   
         margin-left: 20px; 
         order: 1;
         grid-column: 1/3;
@@ -145,13 +249,20 @@ aside{
     }
     main{
         order: 2;
-        display: flex;
-        flex-direction: column;
+        grid-template-columns: 1fr;
+        justify-items: flex-start;
     }
     .tweet{
         width: 300px;
     }
+    .tweet:nth-child(2n){
+        grid-column: 1/3;
+    }
     .contenu{
         width: 250px;
+        font-size: 12px;
+    }
+    .help{
+        display: none;
     }
 }
