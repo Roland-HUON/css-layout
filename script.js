@@ -5,6 +5,9 @@ window.addEventListener("scroll", ()=>{
 const menu = document.querySelector('#menu');
 const liste = document.querySelector('ul');
 menu.addEventListener('click', ()=>{
-    alert("Yeah");
-    liste.style.display ="flex";
+    if(liste.style.display == "none"){
+        liste.style.display ="flex";
+    } else {
+        liste.style.display = "none";
+    }
 })
